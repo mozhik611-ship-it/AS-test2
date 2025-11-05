@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Amber Smith | Beauty . Travel . Lifestyle</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+
+/* ============================
+   ROOT VARIABLES
+============================ */
+:root {
+  --page-bg: #dfe8da;
+  --content-bg: #ffffff;
+  --beige: #eac9a3;
+  --sage: #80876f;
+  --box: #efefe4;
+  --accent: #aab397;
+  --green-btn: #5e6d53;
+  --text-dark: #5e6d53;
+  --muted: #7b7b6f;
+  --font-serif: "Playfair Display", Georgia, serif;
+  --font-sans: "Segoe UI", Arial, sans-serif;
+}
+
+/* ============================
+   GENERAL LAYOUT
+============================ */
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--page-bg);
+  color: #222;
+}
+
+.container {
+  background: var(--content-bg);
+  margin: 0 auto;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+  max-width: 1450px;
+  border-top: 30px solid var(--page-bg);
+  border-left: 30px solid var(--page-bg);
+  border-right: 30px solid var(--page-bg);
+}
+
+/* ============================
+   HEADER
+============================ */
+header {
+  background: #fff;
+  padding: 20px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 9997; /* ✅ FIX ADDED */
+  flex-wrap: wrap;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo h1 {
+  font-family: var(--font-serif);
+  font-size: 5vmin;
+  color: var(--text-dark);
+  margin: 0;
+}
+
+.logo p {
+  font-family: var(--font-serif);
+  color: #9aa294;
+  font-size: 3vmin;
+  margin: 4px 0 0;
+}
+
+/* ============================
+   NAVIGATION (DESKTOP)
+============================ */
+.nav ul {
+  list-style: none;
+  display: flex;
+  align-items: right;
+  justify-content: space-between;
+  gap: 2vmin;
+  text-align: right;
+}
+
+.nav ul li a {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: #47553c;
+  font-size: 1.4vmin;
+  word-spacing: 1vmin;
+}
+
+.social-icons {
+  text-align: right;
+  word-spacing: 5vmin;
+}
+
+.social-icons a {
+  color: var(--text-dark);
+  font-size: 2vmin;
+  margin-left: 18px;
+}
+
+/* ============================
+   HAMBURGER (CSS ONLY)
+============================ */
+.nav-toggle { display: none; }
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  cursor: pointer;
+  z-index: 10000; /* ✅ FIX ADDED */
+  position: relative; /* ✅ FIX ADDED */
+}
+
+.hamburger span {
+  width: 26px;
+  height: 3px;
+  background: #47553c;
+  transition: 0.3s;
+}
+
+@media (max-width: 850px) {
+  .hamburger { display: flex; }
+
+  .nav {
+    position: fixed;
+    top: 0;
+    right: -260px;
+    width: 190px;
+    height: 90vh;
+    font-size: 3vmin;
+    padding: 70px 30px;
+    background: #ffffff;
+    flex-direction: column;
+    gap: 30px;
+    transition: 0.35s ease;
+    box-shadow: -4px 0 18px rgba(0,0,0,0.15);
+    z-index: 9999; /* ✅ FIX ADDED */
+  }
+
+  .nav ul {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .nav-toggle:checked ~ .nav {
+    right: 0;
+  }
+}
+
+/* ============================
+   HERO
+============================ */
+
+.hero {
+      position:relative;
+      background: var(--page-bg);
+    }
+
+.hero .hero-image {
+   height: 120px;
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYr-HcuOluUrPjx7WlWqdoAz_tZQbIo7_b6XHIQIYHzpSK0vorwCKhW4-O79jMTRWSYsg&usqp=CAUS")
+    center/cover no-repeat;
+  text-align: center;
+  padding: 90px 20px;
+  position: relative;
+  background-position: center;
+  background-size: cover;
+  display:block;
+}
+
+.intro-card {
+  background: #f7f7f2;
+  position: absolute;
+  left: 50%;
+  bottom: -60px;
+  transform: translateX(-50%);
+  width: 70%;
+  max-width: 500px;
+  padding: 20px 15px;
+  text-align: center;
+  border-radius: 7px;
+  border: 1px solid #e2e2d8;
+  outline: 1px solid #c8c8a2;
+  outline-offset: -10px;
+}
+
+.intro-card h2 {
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: #757b6a;
+  font-size: 2.5vmin;
+}
+
+.intro-card p {
+  font-size: 2vmin;
+  color: #555;
+}
+
+.btn-main {
+  background: var(--accent);
+  color: #fff;
+  text-decoration: none;
+  padding: 10px 18px;
+  border-radius: 5px;
+  display: inline-block;
+  margin-top: 8px;
+  font-size: 1.6vmin;
+  transition: 0.3s;
+}
+
+.btn-main:hover { transform: scale(1.06); }
+
+/* ============================
+   UNIVERSAL IMAGE ZOOM + LIGHT OVERLAY
+============================ */
+ 
+.img-hover {
+  position: relative;
+  overflow: hidden;
+  display: block;
+}
+
+.img-hover img {
+  width: 100%;
+  height: 100%;
+  transition: 0.45s ease;
+  transform: scale(1);
+}
+
+.img-hover::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,0);
+  transition: 0.4s ease;
+}
+
+.img-hover:hover img {
+  transform: scale(1.12);
+}
+
+.img-hover:hover::after {
+  background: rgba(255,255,255,0.25);
+}
+
+/* ============================
+   CATEGORIES
+============================ */
+.category-row {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+  padding: 110px 20px 56px;
+  flex-wrap: wrap;
+  max-width: var(--max-width);
+  margin: 0 auto;
+}
+
+.cat-card {
+  width: 220px;
+  height: 150px;
+  border-radius: 3px;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-serif);
+  font-size: 4vmin;
+  color: #fff;
+  border: 1px solid #8a8484;
+  outline: 1px solid #fffffb;
+  outline-offset: -9px;
+  transition: 0.4s;
+  flex-grow: 1;
+  flex-basis: 20%;
+}
+
+.cat-card:hover { transform: scale(1.03); }
+
+.cat-travel { background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e"); }
+.cat-life   { background-image: url("https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb"); }
+.cat-home   { background-image: url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"); }
+
+/* ============================  
+   SUBSCRIBE
+============================ */
+.subscribe {
+  background: var(--beige);
+  text-align: center;
+  padding: 60px 20px;
+  margin-top:18px;
+  font-family:var(--font-serif);
+}
+
+.subscribe h3 {
+  margin:0 0 10px;
+  font-family: var(--font-serif);
+  font-style: italic;
+  color: #515c3c;
+  font-size: 4vmin;
+}
+
+/* ============================
+   POSTS
+============================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Lora&display=swap');
+
+.posts {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  padding: 40px 0;
+  background-color: #fff;
+}
+
+.post {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  max-width: 1000px;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.post.reverse { flex-direction: row-reverse; }
+
+.post img {
+  width: 50%;
+  height: 300px;
+  border-radius: 5px;
+  object-fit: cover;
+  position: relative;
+  z-index: 1;
+}
+
+.post-text {
+  background-color: #ebe7d5;
+  padding: 40px 45px;
+  border-radius: 2px;
+  flex: 1;
+  box-shadow: 0 0 2px rgba(0,0,0,0.1);
+  top: 20%;
+  right: 0;
+  left: 50%;
+  transform: translateX(-30%);
+  max-width: 50%;
+  height: 150px;
+  z-index: 1;
+}
+
+.post.reverse .post-text {
+  left: 0;
+  right: 50%;
+  transform: translateX(30%);
+}
+
+.post-meta {
+  font-size: 2vmin;
+  color: #868474;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.post-text h4 {
+  font-family: 'Playfair Display', serif;
+  font-style: italic;
+  color: #525b3a;
+  font-size: 3vmin;
+  margin: 0.8px 0;
+}
+
+.post-text p {
+  font-size: 2vmin;
+  color: #4c4c4c;
+  line-height: 1;
+  margin-bottom: 18px;
+}
+
+.btn-main {
+  display: inline-block;
+  background-color: #8c9d87;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  font-size: 1vmin;
+  letter-spacing: 0.5px;
+  border-radius: 1px;
+  text-transform: uppercase;
+  transition: 0.2s ease;
+}
+
+.btn-main:hover {
+  background-color: #6c7d67;
+}
+
+/* ============================
+   POPULAR POSTS
+============================ */
+.popular-section {
+      padding: 36px 24px 64px;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      background: #fff;
+      display: flex;
+    }
+
+    .popular-inner {
+      background: var(--sage);
+      padding:34px 40px;
+      display:block;
+      width:90%;
+      margin: 0 auto 0;
+      border-radius:2px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.06) inset;
+    }
+
+    .popular-inner h3 {
+      margin:0 0 20px;
+      color:#fff;
+      font-family:var(--font-serif);
+      font-style:italic;
+      font-size:4vmin;
+      text-align:center;
+    }
+
+    .popular-grid {
+      display:flex;
+      gap:36px;
+      justify-content:center;
+      align-items:flex-start;
+      padding-top:18px;
+      flex-wrap:wrap;
+    }
+
+    .popular-card {
+      width:300px;
+      position:relative;
+      overflow:visible;
+      background:#fff;
+      border-radius:2px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.12);
+      
+
+    }
+
+    .popular-card img {
+      display:block;
+      width:100%;
+      height:180px;
+      object-fit:cover;
+      border: 1px solid #8a8484;
+      outline: 1px solid #fffffb;
+      outline-offset: -9px;
+      transition: 0.4s;
+      flex-grow: 1;
+      flex-basis: 10%;
+    }
+
+    .popular-card .meta {
+      position:absolute;
+      left:50%;
+      transform:translateX(-50%);
+      bottom:-30px;
+      width:70%;
+      background:var(--box);
+      padding:14px 16px;
+      text-align:center;
+      border-radius:3px;
+      box-shadow:0 6px 16px rgba(0,0,0,0.08);
+      font-family:var(--font-serif);
+    }
+    .popular-card .meta h4 { 
+      margin:0 0 8px; 
+      font-size:14px; 
+      color:var(--muted); 
+      font-style:italic; }
+
+    .popular-card .meta a { 
+      display:inline-block; 
+      padding:7px 14px; 
+      background:var(--accent); 
+      color:#fff; 
+      text-decoration:none; 
+      font-size:12px; 
+      border-radius:2px; }
+
+/* ============================
+   FOOTER
+============================ */
+.footer {
+  text-align: center;
+  background: var(--beige);
+  padding: 40px 20px;
+  font-family: "Lora", serif;
+
+}
+
+.footer h3 {
+  font-family: "Lora", serif;
+  color: #fff;
+  font-size: 5vmin;
+}
+
+.footer form input,
+.footer form button {
+  padding: 10px;
+  margin: 6px;
+}
+
+.footer form button {
+  background: #9aa294;
+  color: #fff;
+  border: none;
+}
+
+.footer-icons a {
+  color: #9aa294;
+  font-size: 20px;
+  margin: 10px;
+}
+
+</style>
+</head>
+<body>
+
+<div class="container">
+
+<!-- ============================
+     HEADER
+============================ -->
+<header>
+  <div class="logo">
+    <h1>Amber Smith</h1>
+    <p>Beauty · Travel · Lifestyle</p>
+  </div>
+
+  <input type="checkbox" id="nav-toggle" class="nav-toggle">
+  <label for="nav-toggle" class="hamburger">
+    <span></span><span></span><span></span>
+  </label>
+
+  <nav class="nav">
+    <ul>
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About Me</a></li>
+      <li><a href="#">Shop My Insta</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-pinterest"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </nav>
+</header>
+
+<!-- ============================
+     HERO
+============================ -->
+<section class="hero" role="region" aria-label="Hero">
+      <div class="hero-image" aria-hidden="true"></div>
+
+      <div class="intro-card" role="article" aria-label="Intro">
+    <h2>Introduction Goes Here</h2>
+    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</p>
+    <a href="#" class="btn-main">Read More</a>
+  </div>
+</section>
+
+<!-- ============================
+     CATEGORIES
+============================ -->
+<section class="category-row" aria-label="categories">
+  <div class="cat-card cat-travel img-hover"><span>Travel</span></div>
+  <div class="cat-card cat-life img-hover"><span>Lifestyle</span></div>
+  <div class="cat-card cat-home img-hover"><span>Home</span></div>
+</section>
+
+<!-- ============================
+     SUBSCRIBE
+============================ -->
+<section class="subscribe">
+  <h3>Download My Monthly Planner</h3>
+  <p>Sign up to receive this printable for free</p>
+  <form>
+    <input type="text" placeholder="Full Name" required />
+    <input type="email" placeholder="Email Address" required />
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
+
+<!-- ============================
+     POSTS
+============================ -->
+<section class="posts" aria-label="Posts">
+
+  <!-- Posts Section -->
+  <section class="posts">
+    <div class="post img-hover">
+      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" alt="">
+      <div class="post-text">
+        <h4>Lorem ipsum dolor sit amet</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+        <a href="#" class="btn-main">READ MORE</a>
+      </div>
+    </div>
+
+    <div class="post reverse img-hover">
+      <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="">
+      <div class="post-text">
+        <h4>Lorem ipsum dolor sit amet</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+        <a href="#" class="btn-main">READ MORE</a>
+      </div>
+    </div>
+
+    <div class="post img-hover">
+      <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2" alt="">
+      <div class="post-text">
+        <h4>Lorem ipsum dolor sit amet</h4>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
+        <a href="#" class="btn-main">READ MORE</a>
+      </div>
+    </div>
+  </section>
+
+<!-- ============================
+     POPULAR POSTS
+============================ -->
+<section class="popular-section" aria-labelledby="popular-title">
+      <div class="popular-inner" role="region" aria-label="Popular posts">
+        <h3 id="popular-title">Popular Posts</h3>
+
+        <div class="popular-grid">
+          <article class="popular-card img-hover" aria-label="Popular 1">
+            <img src="https://images.unsplash.com/photo-1684149301801-49ba39a9df84" alt="wheat">
+            <div class="meta">
+              <h4>Lorem ipsum dolor</h4>
+              <a href="#" class="btn-main">READ MORE</a>
+            </div>
+          </article>
+
+          <article class="popular-card img-hover" aria-label="Popular 2">
+        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="writing image">
+            <div class="meta">
+              <h4>Lorem ipsum dolor</h4>
+              <a href="#" class="btn-main">READ MORE</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+<!-- ============================
+     FOOTER
+============================ -->
+<footer class="footer">
+  <h3>Get The Latest</h3>
+  <form>
+    <input type="text" placeholder="Full Name">
+    <input type="email" placeholder="Email Address">
+    <button type="submit">Subscribe</button>
+  </form>
+  <div class="footer-icons">
+    <a href="#"><i class="fab fa-instagram"></i></a>
+    <a href="#"><i class="fab fa-youtube"></i></a>
+    <a href="#"><i class="fab fa-pinterest"></i></a>
+    <a href="#"><i class="fab fa-tiktok"></i></a>
+  </div>
+</footer>
+
+</div>
+
+</body>
+</html>
