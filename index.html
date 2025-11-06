@@ -7,318 +7,280 @@
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
 
-<style>
+    :root {
+      --page-bg: #dfe8da;    /* soft green page edges */
+      --content-bg: #ffffff; /* main content background */
+      --beige: #eac9a3;      /* footer / CTA background */
+      --sage: #80876f;       /* inner popular posts block */
+      --box: #efefe4;        /* light beige boxes *
+      --accent: #aab397;     /* small accents/buttons */
+      --text-dark: #5e6d53;
+      --muted: #7b7b6f;
+      --font-serif: "Playfair Display", Georgia, serif;
+      --font-sans: "Segoe UI", Arial, sans-serif;
+      }
 
-/* ============================
-   ROOT VARIABLES
-============================ */
-:root {
-  --page-bg: #dfe8da;
-  --content-bg: #ffffff;
-  --beige: #eac9a3;
-  --sage: #80876f;
-  --box: #efefe4;
-  --accent: #aab397;
-  --green-btn: #5e6d53;
-  --text-dark: #5e6d53;
-  --muted: #7b7b6f;
-  --font-serif: "Playfair Display", Georgia, serif;
-  --font-sans: "Segoe UI", Arial, sans-serif;
-}
-
-/* ============================
-   GENERAL LAYOUT
-============================ */
-body {
-  margin: 0;
-  font-family: var(--font-sans);
-  background: var(--page-bg);
-  color: #222;
-}
-
-.container {
-  background: var(--content-bg);
-  margin: 0 auto;
-  border-radius: 4px;
-  overflow: hidden;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
-  max-width: 1450px;
-  border-top: 30px solid var(--page-bg);
-  border-left: 30px solid var(--page-bg);
-  border-right: 30px solid var(--page-bg);
-}
-
-/* ============================
-   HEADER
-============================ */
-header {
-  background: #fff;
-  padding: 20px 15px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  z-index: 9997; /* ✅ FIX ADDED */
-  flex-wrap: wrap;
-  border-bottom: 1px solid #ddd;
-}
-
-.logo h1 {
-  font-family: var(--font-serif);
-  font-size: 5vmin;
-  color: var(--text-dark);
-  margin: 0;
-}
-
-.logo p {
-  font-family: var(--font-serif);
-  color: #9aa294;
-  font-size: 3vmin;
-  margin: 4px 0 0;
-}
-
-/* ============================
-   NAVIGATION (DESKTOP)
-============================ */
-.nav ul {
-  list-style: none;
-  display: flex;
-  align-items: right;
-  justify-content: space-between;
-  gap: 2vmin;
-  text-align: right;
-}
-
-.nav ul li a {
-  text-transform: uppercase;
-  text-decoration: none;
-  color: #47553c;
-  font-size: 1.4vmin;
-  word-spacing: 1vmin;
-}
-
-.social-icons {
-  text-align: right;
-  word-spacing: 5vmin;
-}
-
-.social-icons a {
-  color: var(--text-dark);
-  font-size: 2vmin;
-  margin-left: 18px;
-}
-
-/* ============================
-   HAMBURGER (CSS ONLY)
-============================ */
-.nav-toggle { display: none; }
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  cursor: pointer;
-  z-index: 10000; /* ✅ FIX ADDED */
-  position: relative; /* ✅ FIX ADDED */
-}
-
-.hamburger span {
-  width: 26px;
-  height: 3px;
-  background: #47553c;
-  transition: 0.3s;
-}
-
-@media (max-width: 850px) {
-  .hamburger { display: flex; }
-
-  .nav {
-    position: fixed;
-    top: 0;
-    right: -260px;
-    width: 190px;
-    height: 90vh;
-    font-size: 3vmin;
-    padding: 70px 30px;
-    background: #ffffff;
-    flex-direction: column;
-    gap: 30px;
-    transition: 0.35s ease;
-    box-shadow: -4px 0 18px rgba(0,0,0,0.15);
-    z-index: 9999; /* ✅ FIX ADDED */
-  }
-
-  .nav ul {
-    flex-direction: column;
-    gap: 20px;
-  }
-
-  .nav-toggle:checked ~ .nav {
-    right: 0;
-  }
-}
-
-/* ============================
-   HERO
-============================ */
-
-.hero {
-      position:relative;
+    body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
       background: var(--page-bg);
+      color: #222;
     }
 
-.hero .hero-image {
-   height: 120px;
-  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYr-HcuOluUrPjx7WlWqdoAz_tZQbIo7_b6XHIQIYHzpSK0vorwCKhW4-O79jMTRWSYsg&usqp=CAUS")
-    center/cover no-repeat;
-  text-align: center;
-  padding: 90px 20px;
-  position: relative;
-  background-position: center;
-  background-size: cover;
-  display:block;
-}
+    .container {
+      background: var(--content-bg);
+      margin: 0 auto;
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
+      max-width: 1450px;
+      border-top: 30px solid var(--page-bg);
+      border-left: 30px solid var(--page-bg);
+      border-right: 30px solid var(--page-bg);
+    }
 
-.intro-card {
-  background: #f7f7f2;
-  position: absolute;
-  left: 50%;
-  bottom: -60px;
-  transform: translateX(-50%);
-  width: 70%;
-  max-width: 500px;
-  padding: 20px 15px;
-  text-align: center;
-  border-radius: 7px;
-  border: 1px solid #e2e2d8;
+    header {
+      background: #fff;
+      padding: 30px 15px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #ddd;
+      
+    }
+
+    .logo h1 {
+      font-family: "Playfair Display", serif;
+      font-size:3.5vmin;
+      color: #5e6d53;
+      margin: 0;
+      text-align: left ;
+    }
+
+    .logo p {
+      font-family:  "Playfair Display", serif;
+      color: #9aa294;
+      font-size: 2vmin;
+      margin: 4px 0 0;
+    }
+
+    .nav ul {
+       list-style: none;
+       display: flex;
+       align-items: right;
+       justify-content: space-between;
+       gap: 2vmin;
+       text-align: right;
+     }
+
+      .nav ul li a {
+    text-transform: uppercase;
+      text-decoration: none;
+      color: #47553c;
+      font-size: 1.4vmin;
+      word-spacing: 1vmin;
+      }
+
+    .social-icons {
+       text-align: right;
+      word-spacing: 5vmin;
+     }
+
+    .social-icons a {
+     color: #5e6d53;
+     font-size: 2vmin;
+     }
+
+
+    .hero {
+      background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQYr-HcuOluUrPjx7WlWqdoAz_tZQbIo7_b6XHIQIYHzpSK0vorwCKhW4-O79jMTRWSYsg&usqp=CAUS")
+        center/cover no-repeat;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+      }
+
+    .intro {
+      background: #f7f7f2;
+      box-shadow: 0 2px 4px #e5e5e5;
+      position: absolute;
+      left: 50%;
+      bottom: -60px;
+      transform: translateX(-50%);
+      width: 70%;
+      max-width: 500px;
+      padding: 20px 15px;
+      text-align: center;
+      border-radius: 7px;
+      margin: 0 auto;
+      border: 1px solid #e2e2d8;
   outline: 1px solid #c8c8a2;
-  outline-offset: -10px;
+  outline-offset: -10px; /* double inner line effect */
+    }
+
+    .intro h2 {
+      font-family: 'Playfair Display', serif;
+      font-style: italic;
+      color: #757b6a; /* soft green-gray tone */
+      margin-top: 0;
+      font-size: 2.5vmin;
+    }
+    .intro p{
+      font-family: 'Raleway', sans-serif;
+      font-size: 2vmin;
+      line-height: 0.9;
+      color: #555;
+       margin-bottom: 10px;}
+
+    .btn-main {
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      padding: 10px 18px;
+      border-radius: 5px;
+      display: inline-block;
+      margin-top: 8px;
+      font-size: 3.5vmin;
+    }
+
+    .category-row {
+      display: flex;
+      gap: 40px;
+      justify-content: center;
+      padding: 110px 20px 56px;
+      flex-wrap: wrap;
+    }
+
+    .cat-card {
+      width: 220px;
+      height: 150px;
+      border-radius: 3px;
+      overflow: hidden;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      box-shadow: inset 0 0 0 1px #dcd8c0;
+      display: flex;
+      flex-basis:10%;
+      flex-grow: 1;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      font-family: "Playfair Display", serif;
+      font-size: 4vmin;
+       filter: blur(1px) brightness(0.9);
+      transition: all 0.2s ease;
+      text-shadow: 0 1px 2px rgba(255, 255, 255, 0.5);
+      font-style: italic;
+      border: 1px solid #8a8484;
+  outline: 1px solid #fffffb;
+  outline-offset: -9px; /* double inner line effect */
+      }
+      
+    .cat-card::after {
+      content: "";
+      position: absolute;
+      background: rgba(255, 255, 255, 0.08);
+    z-index: 1;}
+
+    .cat-travel {
+      background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=1200&q=60");
+    }
+
+    .cat-life {
+      background-image: url("https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb?auto=format&fit=crop&w=1200&q=60");
+    }
+
+    .cat-home {
+      background-image: url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=60");
+    }
+
+    .cat-label {
+       background: rgba(73, 68, 68, 0.145);
+      padding: 18px 80px;
+      font-family: "Raleway", sans-serif;
+      font-weight: 400;
+      letter-spacing: 0.6px;
+      color: #fff;
+    }
+
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Lora:wght@400&display=swap');
+
+/* Section background */
+.subscribe {
+  background: #eac9a3; /* same beige color as image */
+  text-align: center;
+  padding: 60px 20px;
 }
 
-.intro-card h2 {
-  font-family: var(--font-serif);
+/* Main heading */
+.subscribe h3 {
+  font-family: 'Playfair Display', serif;
   font-style: italic;
-  color: #757b6a;
-  font-size: 2.5vmin;
+  color: #515c3c;
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
-.intro-card p {
+/* Subtext */
+.subscribe p {
+  font-family: 'Lora', serif;
   font-size: 2vmin;
-  color: #555;
+  color: #534848;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  margin-bottom: 25px;
 }
 
-.btn-main {
-  background: var(--accent);
-  color: #fff;
-  text-decoration: none;
-  padding: 10px 18px;
-  border-radius: 5px;
-  display: inline-block;
-  margin-top: 8px;
-  font-size: 1.6vmin;
-  transition: 0.3s;
-}
-
-.btn-main:hover { transform: scale(1.06); }
-
-/* ============================
-   UNIVERSAL IMAGE ZOOM + LIGHT OVERLAY
-============================ */
- 
-.img-hover {
-  position: relative;
-  overflow: hidden;
-  display: block;
-}
-
-.img-hover img {
-  width: 100%;
-  height: 100%;
-  transition: 0.45s ease;
-  transform: scale(1);
-}
-
-.img-hover::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255,255,255,0);
-  transition: 0.4s ease;
-}
-
-.img-hover:hover img {
-  transform: scale(1.12);
-}
-
-.img-hover:hover::after {
-  background: rgba(255,255,255,0.25);
-}
-
-/* ============================
-   CATEGORIES
-============================ */
-.category-row {
+/* Form container */
+.subscribe-form {
   display: flex;
-  gap: 20px;
   justify-content: center;
-  padding: 110px 20px 56px;
+  align-items: center;
   flex-wrap: wrap;
-  max-width: var(--max-width);
+  gap: 10px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
-.cat-card {
+/* Input fields */
+.subscribe-form input {
+  padding: 12px 16px;
+  border: none;
+  outline: none;
+  font-family: 'Lora', serif;
+  font-size: 14px;
+  background-color: #fff;
   width: 220px;
-  height: 150px;
-  border-radius: 3px;
-  background-size: cover;
-  background-position: center;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-serif);
-  font-size: 4vmin;
+  border-radius: 4px;
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.15);
+}
+
+/* Button */
+.subscribe-form button {
+  background: #5e6d53;
+  border: none;
   color: #fff;
-  border: 1px solid #8a8484;
-  outline: 1px solid #fffffb;
-  outline-offset: -9px;
-  transition: 0.4s;
-  flex-grow: 1;
-  flex-basis: 20%;
+  padding: 12px 25px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Lora', serif;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: 0.3s ease;
 }
 
-.cat-card:hover { transform: scale(1.03); }
-
-.cat-travel { background-image: url("https://images.unsplash.com/photo-1507525428034-b723cf961d3e"); }
-.cat-life   { background-image: url("https://images.unsplash.com/photo-1503341455253-b2e723bb3dbb"); }
-.cat-home   { background-image: url("https://images.unsplash.com/photo-1505693416388-ac5ce068fe85"); }
-
-/* ============================  
-   SUBSCRIBE
-============================ */
-.subscribe {
-  background: var(--beige);
-  text-align: center;
-  padding: 60px 20px;
-  margin-top:18px;
-  font-family:var(--font-serif);
+.subscribe-form button:hover {
+  background-color: #8c9d87;
 }
 
-.subscribe h3 {
-  margin:0 0 10px;
-  font-family: var(--font-serif);
-  font-style: italic;
-  color: #515c3c;
-  font-size: 4vmin;
-}
 
-/* ============================
-   POSTS
-============================ */
+   @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Lora&display=swap');
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@1,500&family=Lora&display=swap');
-
+/* Main posts section */
 .posts {
   position: relative;
   display: flex;
@@ -328,6 +290,7 @@ header {
   background-color: #fff;
 }
 
+/* Individual post layout */
 .post {
   display: flex;
   align-items: center;
@@ -338,7 +301,9 @@ header {
   flex-wrap: wrap;
 }
 
-.post.reverse { flex-direction: row-reverse; }
+.post.reverse {
+  flex-direction: row-reverse;
+}
 
 .post img {
   width: 50%;
@@ -346,7 +311,7 @@ header {
   border-radius: 5px;
   object-fit: cover;
   position: relative;
-  z-index: 1;
+   z-index: 1;
 }
 
 .post-text {
@@ -355,7 +320,7 @@ header {
   border-radius: 2px;
   flex: 1;
   box-shadow: 0 0 2px rgba(0,0,0,0.1);
-  top: 20%;
+top: 20%;
   right: 0;
   left: 50%;
   transform: translateX(-30%);
@@ -364,12 +329,12 @@ header {
   z-index: 1;
 }
 
+/* Reverse Post (text on left) */
 .post.reverse .post-text {
   left: 0;
   right: 50%;
   transform: translateX(30%);
 }
-
 .post-meta {
   font-size: 2vmin;
   color: #868474;
@@ -392,6 +357,7 @@ header {
   margin-bottom: 18px;
 }
 
+/* Button style */
 .btn-main {
   display: inline-block;
   background-color: #8c9d87;
@@ -409,22 +375,22 @@ header {
   background-color: #6c7d67;
 }
 
-/* ============================
-   POPULAR POSTS
-============================ */
-.popular-section {
-      padding: 36px 24px 64px;
+  
+
+/* POPULAR POSTS section - inside the main white area we create an inner green box */
+    .popular-section {
+      padding: 34px 24px 60px;
       max-width: var(--max-width);
       margin: 0 auto;
       background: #fff;
-      display: flex;
+
     }
 
     .popular-inner {
       background: var(--sage);
-      padding:34px 40px;
+      padding:34px 45px;
       display:block;
-      width:90%;
+      width:80%;
       margin: 0 auto 0;
       border-radius:2px;
       box-shadow: 0 6px 12px rgba(0,0,0,0.06) inset;
@@ -441,7 +407,7 @@ header {
 
     .popular-grid {
       display:flex;
-      gap:36px;
+      gap:40px;
       justify-content:center;
       align-items:flex-start;
       padding-top:18px;
@@ -449,14 +415,12 @@ header {
     }
 
     .popular-card {
-      width:300px;
+      width:240px;
       position:relative;
       overflow:visible;
       background:#fff;
       border-radius:2px;
       box-shadow:0 6px 18px rgba(0,0,0,0.12);
-      
-
     }
 
     .popular-card img {
@@ -464,19 +428,16 @@ header {
       width:100%;
       height:180px;
       object-fit:cover;
-      border: 1px solid #8a8484;
-      outline: 1px solid #fffffb;
-      outline-offset: -9px;
-      transition: 0.4s;
       flex-grow: 1;
-      flex-basis: 10%;
+      flex-basis: 5%;
     }
 
+    /* the beige box that sits over the image */
     .popular-card .meta {
       position:absolute;
       left:50%;
       transform:translateX(-50%);
-      bottom:-30px;
+      bottom:-30px;             /* sits slightly outside the image like the reference */
       width:70%;
       background:var(--box);
       padding:14px 16px;
@@ -485,136 +446,94 @@ header {
       box-shadow:0 6px 16px rgba(0,0,0,0.08);
       font-family:var(--font-serif);
     }
-    .popular-card .meta h4 { 
-      margin:0 0 8px; 
-      font-size:14px; 
-      color:var(--muted); 
-      font-style:italic; }
+    .popular-card .meta h4 { margin:0 0 8px; font-size:14px; color:var(--muted); font-style:italic; }
+    .popular-card .meta a { display:inline-block; padding:7px 14px; background:var(--accent); color:#fff; text-decoration:none; font-size:12px; border-radius:2px; }
 
-    .popular-card .meta a { 
-      display:inline-block; 
-      padding:7px 14px; 
-      background:var(--accent); 
-      color:#fff; 
-      text-decoration:none; 
-      font-size:12px; 
-      border-radius:2px; }
+   
 
-/* ============================
-   FOOTER
-============================ */
+    /* Footer */
 .footer {
+   font-family: "Lora", serif;
+      color: #fff;
   text-align: center;
-  background: var(--beige);
+  background: #e9c6a2;
   padding: 40px 20px;
-  font-family: "Lora", serif;
-
 }
 
-.footer h3 {
-  font-family: "Lora", serif;
-  color: #fff;
-  font-size: 5vmin;
-}
-
-.footer form input,
-.footer form button {
+.footer form input, .footer form button {
+  margin: 5px;
   padding: 10px;
-  margin: 6px;
+  border: none;
 }
 
 .footer form button {
   background: #9aa294;
   color: #fff;
-  border: none;
 }
 
-.footer-icons a {
-  color: #9aa294;
-  font-size: 20px;
-  margin: 10px;
-}
+    .footer-icons a {
+      color: #9aa294;
+      margin: 10px;
+      font-size: 20px;
+    }
 
-</style>
-</head>
+
+  </style>
+
 <body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <h1>Amber Smith</h1>
+        <p>Beauty . Travel . Lifestyle</p>
+      </div>
+     <nav class="nav">
+      <ul>
+        <li><a href="#">Home</a></li>
+        <li><a href="#">About Me</a></li>
+        <li><a href="#">Shop My Insta</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <div class="social-icons">
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="#"><i class="fab fa-pinterest"></i></a>
+        <a href="#"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </nav>
+    </header>
 
-<div class="container">
+    <section class="hero">
+      <div class="intro">
+        <h2>Introduction Goes Here</h2>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam,quis nostrud.
+        </p>
+        <a href="#" class="btn-main">Read More</a>
+      </div>
+    </section>
 
-<!-- ============================
-     HEADER
-============================ -->
-<header>
-  <div class="logo">
-    <h1>Amber Smith</h1>
-    <p>Beauty · Travel · Lifestyle</p>
-  </div>
+    <section class="category-row" aria-label="categories">
+      <div class="cat-card cat-travel"><span class="cat-label">Travel</span></div>
+      <div class="cat-card cat-life"><span class="cat-label">Lifestyle</span></div>
+      <div class="cat-card cat-home"><span class="cat-label">Home</span></div>
+    </section>
 
-  <input type="checkbox" id="nav-toggle" class="nav-toggle">
-  <label for="nav-toggle" class="hamburger">
-    <span></span><span></span><span></span>
-  </label>
+    <section class="subscribe">
+      <h3>Download My Monthly Planner</h3>
+      <p>Sign up to receive this printable for free</p>
+      <form>
+        <input type="text" placeholder="Full Name" required />
+        <input type="email" placeholder="Email Address" required />
+        <button type="submit">Subscribe</button>
+      </form>
+    </section>
 
-  <nav class="nav">
-    <ul>
-      <li><a href="#">Home</a></li>
-      <li><a href="#">About Me</a></li>
-      <li><a href="#">Shop My Insta</a></li>
-      <li><a href="#">Contact</a></li>
-    </ul>
-    <div class="social-icons">
-      <a href="#"><i class="fab fa-instagram"></i></a>
-      <a href="#"><i class="fab fa-youtube"></i></a>
-      <a href="#"><i class="fab fa-pinterest"></i></a>
-      <a href="#"><i class="fab fa-tiktok"></i></a>
-    </div>
-  </nav>
-</header>
-
-<!-- ============================
-     HERO
-============================ -->
-<section class="hero" role="region" aria-label="Hero">
-      <div class="hero-image" aria-hidden="true"></div>
-
-      <div class="intro-card" role="article" aria-label="Intro">
-    <h2>Introduction Goes Here</h2>
-    <p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit...</p>
-    <a href="#" class="btn-main">Read More</a>
-  </div>
-</section>
-
-<!-- ============================
-     CATEGORIES
-============================ -->
-<section class="category-row" aria-label="categories">
-  <div class="cat-card cat-travel img-hover"><span>Travel</span></div>
-  <div class="cat-card cat-life img-hover"><span>Lifestyle</span></div>
-  <div class="cat-card cat-home img-hover"><span>Home</span></div>
-</section>
-
-<!-- ============================
-     SUBSCRIBE
-============================ -->
-<section class="subscribe">
-  <h3>Download My Monthly Planner</h3>
-  <p>Sign up to receive this printable for free</p>
-  <form>
-    <input type="text" placeholder="Full Name" required />
-    <input type="email" placeholder="Email Address" required />
-    <button type="submit">Subscribe</button>
-  </form>
-</section>
-
-<!-- ============================
-     POSTS
-============================ -->
-<section class="posts" aria-label="Posts">
-
-  <!-- Posts Section -->
+     <!-- Posts Section -->
   <section class="posts">
-    <div class="post img-hover">
-      <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6" alt="">
+    <div class="post">
+      
+      <img src="https://images.unsplash.com/photo-1684149301801-49ba39a9df84" alt="">
       <div class="post-text">
         <h4>Lorem ipsum dolor sit amet</h4>
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore.</p>
@@ -622,7 +541,7 @@ header {
       </div>
     </div>
 
-    <div class="post reverse img-hover">
+    <div class="post reverse">
       <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb" alt="">
       <div class="post-text">
         <h4>Lorem ipsum dolor sit amet</h4>
@@ -631,7 +550,7 @@ header {
       </div>
     </div>
 
-    <div class="post img-hover">
+    <div class="post">
       <img src="https://images.unsplash.com/photo-1515378791036-0648a3ef77b2" alt="">
       <div class="post-text">
         <h4>Lorem ipsum dolor sit amet</h4>
@@ -641,52 +560,48 @@ header {
     </div>
   </section>
 
-<!-- ============================
-     POPULAR POSTS
-============================ -->
-<section class="popular-section" aria-labelledby="popular-title">
+  <!-- POPULAR POSTS -->
+    <section class="popular-section" aria-labelledby="popular-title">
       <div class="popular-inner" role="region" aria-label="Popular posts">
         <h3 id="popular-title">Popular Posts</h3>
 
         <div class="popular-grid">
-          <article class="popular-card img-hover" aria-label="Popular 1">
+          <article class="popular-card" aria-label="Popular 1">
             <img src="https://images.unsplash.com/photo-1684149301801-49ba39a9df84" alt="wheat">
             <div class="meta">
               <h4>Lorem ipsum dolor</h4>
-              <a href="#" class="btn-main">READ MORE</a>
+              <a href="#">READ MORE</a>
             </div>
           </article>
 
-          <article class="popular-card img-hover" aria-label="Popular 2">
-        <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="writing image">
+          <article class="popular-card" aria-label="Popular 2">
+            <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d" alt="">
+          <div class="popular-text" alt="writing image">
             <div class="meta">
               <h4>Lorem ipsum dolor</h4>
-              <a href="#" class="btn-main">READ MORE</a>
+              <a href="#">READ MORE</a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-<!-- ============================
-     FOOTER
-============================ -->
-<footer class="footer">
-  <h3>Get The Latest</h3>
-  <form>
-    <input type="text" placeholder="Full Name">
-    <input type="email" placeholder="Email Address">
-    <button type="submit">Subscribe</button>
-  </form>
-  <div class="footer-icons">
-    <a href="#"><i class="fab fa-instagram"></i></a>
-    <a href="#"><i class="fab fa-youtube"></i></a>
-    <a href="#"><i class="fab fa-pinterest"></i></a>
-    <a href="#"><i class="fab fa-tiktok"></i></a>
+      <!-- Footer -->
+  <footer class="footer">
+    <h3>Get The Latest</h3>
+    <form>
+      <input type="text" placeholder="Full Name">
+      <input type="email" placeholder="Email Address">
+      <button type="submit">Subscribe</button>
+    </form>
+    <div class="footer-icons">
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-pinterest"></i></a>
+      <a href="#"><i class="fab fa-tiktok"></i></a>
+    </div>
+  </footer>
   </div>
-</footer>
-
-</div>
-
 </body>
+</head>
 </html>
